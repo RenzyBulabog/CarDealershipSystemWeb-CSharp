@@ -122,3 +122,4 @@ C:\Users\RIGIL ANN SACRO\CarDealershipAPI\bin\Debug\net10.0\ru\Microsoft.CodeAna
 C:\Users\RIGIL ANN SACRO\CarDealershipAPI\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\RIGIL ANN SACRO\CarDealershipAPI\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\RIGIL ANN SACRO\CarDealershipAPI\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\RIGIL ANN SACRO\CarDealershipAPI\obj\Debug\net10.0\CarDealershipAPI.sourcelink.json
