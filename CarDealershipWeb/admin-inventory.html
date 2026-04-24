@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inventory</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="layout">
+
+<aside class="sidebar">
+    <div class="logo">🚗 CarWay</div>
+    <!-- SAME NAV -->
+    <nav>
+        <a href="admin-dashboard.html">Dashboard</a>
+        <a href="admin-cars.html">Cars</a>
+        <a class="active" href="admin-inventory.html">Inventory</a>
+        <a href="admin-sales-history.html">Sales History</a>
+        <a href="index.html">Logout</a>
+    </nav>
+</aside>
+
+<main class="main">
+
+<div class="card">
+    <h2>Inventory</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Stock</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="inventoryTable"></tbody>
+    </table>
+</div>
+
+</main>
+</div>
+
+<script src="app.js"></script>
+<script>
+    loadInventory();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="logo">🚗 CarWay</div>
+        <nav>
+            <a class="active" href="customer-dashboard.html">Dashboard</a>
+            <a href="customer-cars.html">Browse Cars</a>
+            <a href="index.html">Logout</a>
+        </nav>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- TOPBAR -->
+        <div class="topbar">
+            <input placeholder="Search cars...">
+            <div class="user">Customer</div>
+        </div>
+
+        <!-- STATS -->
+        <div class="stats">
+            <div class="card stat-card">
+                🚗 Available Cars: <span id="availableCars">0</span>
+            </div>
+            <div class="card stat-card">
+                💰 Sold Cars: <span id="soldCars">0</span>
+            </div>
+            <div class="card stat-card">
+                📦 Total Cars: <span id="totalCars">0</span>
+            </div>
+        </div>
+
+        <!-- WELCOME CARD -->
+        <div class="card">
+            <h2>Welcome to CarWay</h2>
+            <p>Browse cars and find your perfect ride.</p>
+        </div>
+
+    </main>
+
+</div>
+
+<script src="app.js"></script>
+
+<script>
+    loadDashboardStats();
+</script>
+
+</body>
+</html>

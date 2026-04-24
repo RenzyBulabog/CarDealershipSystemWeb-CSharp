@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="layout">
+
+<aside class="sidebar">
+  <div class="logo">🚗 CarWay</div>
+  <nav>
+    <a href="customer-dashboard.html">Dashboard</a>
+    <a href="customer-cars.html">Cars</a>
+    <a class="active" href="customer-profile.html">Profile</a>
+    <a href="index.html">Logout</a>
+  </nav>
+</aside>
+
+<main class="main">
+
+  <div class="card">
+    <h2>Personal Info</h2>
+
+    <input id="fullname" placeholder="Full Name">
+    <input id="email" placeholder="Email">
+
+    <button onclick="updateProfile()">Save</button>
+  </div>
+
+</main>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

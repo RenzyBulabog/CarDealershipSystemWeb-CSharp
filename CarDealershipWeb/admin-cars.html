@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cars</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="layout">
+
+<aside class="sidebar">
+    <div class="logo">🚗 CarWay</div>
+    <nav>
+       <a href="admin-dashboard.html">Dashboard</a>
+       <a href="admin-cars.html">Cars</a>
+       <a href="admin-inventory.html">Inventory</a>
+       <a href="admin-sales-history.html">Sales History</a>
+       <a href="index.html" onclick="logout()">Logout</a>
+    </nav>
+</aside>
+
+<main class="main">
+
+    <div class="topbar">
+        <input placeholder="Search cars...">
+    </div>
+
+    <div class="card">
+        <h2>Cars Inventory</h2>
+        <button onclick="loadCars()">Load Cars</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th><th>Brand</th><th>Model</th>
+                    <th>Year</th><th>Price</th><th>Status</th><th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="carsTable"></tbody>
+        </table>
+    </div>
+
+    <div class="card">
+        <h3>Add / Update Car</h3>
+
+        <div class="form-grid">
+            <input id="id" readonly placeholder="ID">
+            <input id="brand" placeholder="Brand">
+            <input id="model" placeholder="Model">
+            <input id="year" placeholder="Year">
+            <input id="price" placeholder="Price">
+            <input id="status" placeholder="Status">
+        </div>
+
+        <button onclick="addCar()">Add</button>
+        <button onclick="updateCar()">Update</button>
+    </div>
+
+</main>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

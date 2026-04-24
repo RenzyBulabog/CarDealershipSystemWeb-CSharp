@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sales History</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="layout">
+
+<aside class="sidebar">
+    <div class="logo">🚗 CarWay</div>
+
+    <nav>
+        <a href="admin-dashboard.html">Dashboard</a>
+        <a href="admin-cars.html">Cars</a>
+        <a href="admin-inventory.html">Inventory</a>
+        <a class="active" href="admin-sales-history.html">Sales History</a>
+        <a href="index.html">Logout</a>
+    </nav>
+</aside>
+
+<main class="main">
+
+<div class="card">
+    <h2>Sales History</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Car ID</th>
+                <th>Customer</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody id="salesTable"></tbody>
+    </table>
+</div>
+
+</main>
+</div>
+
+<script src="app.js"></script>
+<script>
+    loadSales();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browse Cars</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="layout">
+
+<aside class="sidebar">
+    <div class="logo">🚗 CarWay</div>
+    <nav>
+        <a href="customer-dashboard.html">Dashboard</a>
+        <a class="active" href="customer-cars.html">Cars</a>
+        <a href="index.html">Logout</a>
+    </nav>
+</aside>
+
+<main class="main">
+
+    <div class="card">
+        <h2>Available Cars</h2>
+        <button onclick="loadCustomerCars()">Load Cars</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Brand</th><th>Model</th><th>Year</th>
+                    <th>Price</th><th>Status</th><th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="customerTable"></tbody>
+        </table>
+    </div>
+
+</main>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

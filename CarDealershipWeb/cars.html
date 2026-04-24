@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Dealership</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="navbar">
+    <h2> Car Dealership</h2>
+    <div>
+        <a href="cars.html">Cars</a>
+        <a href="sales.html">Sales</a>
+        <a href="index.html">Logout</a>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="card">
+        <h3>Car Inventory</h3>
+        <button onclick="loadCars()">Load Cars</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Brand</th>
+                    <th>Model</th>
+                    <th>Year</th>
+                    <th>Price</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="carsTable"></tbody>
+        </table>
+    </div>
+
+    <div class="card">
+        <h3>Add / Update Car</h3>
+
+        <input id="id" placeholder="ID"><br>
+        <input id="brand" placeholder="Brand">
+        <input id="model" placeholder="Model"><br>
+        <input id="year" placeholder="Year">
+        <input id="price" placeholder="Price"><br>
+        <input id="status" placeholder="Status"><br>
+
+        <button onclick="addCar()">Add</button>
+        <button onclick="updateCar()">Update</button>
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
