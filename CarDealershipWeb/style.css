@@ -143,7 +143,7 @@ table {
 .login-card {
     display: flex;
     width: 700px;
-    height: 350px;
+    height: auto;
     border-radius: 20px;
     overflow: hidden;
     background: linear-gradient(145deg, #1e293b, #020617);
@@ -202,4 +202,123 @@ table {
 
 .login-right button:hover {
     transform: scale(1.05);
+}
+
+/* LAYOUT */
+.layout {
+    display: flex;
+    height: 100vh;
+    background: #0f172a;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 220px;
+    background: #020617;
+    padding: 20px;
+    color: white;
+}
+
+.sidebar .logo {
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px;
+    color: #cbd5f5;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+.sidebar a:hover,
+.sidebar .active {
+    background: #38bdf8;
+    color: black;
+}
+
+/* MAIN */
+.main {
+    flex: 1;
+    padding: 20px;
+}
+
+/* TOPBAR */
+.topbar input {
+    width: 300px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+/* CARD */
+.card {
+    background: linear-gradient(145deg, #1e293b, #020617);
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+    color: white;
+}
+
+/* FORM GRID */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+input {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+}
+
+/* BUTTON */
+.btn {
+    background: #38bdf8;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    color: #38bdf8;
+}
+
+tr {
+    border-bottom: 1px solid #1e293b;
+}
+
+.charts {
+    display: flex;
+    justify-content: space-between; /* 🔥 important */
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.chart-card {
+    width: 600px;   /* 🔥 palakihin */
+    height: 400px;  /* 🔥 palakihin */
+}
+
+.chart-card canvas {
+    width: 100% !important;
+    height: 320px !important;
 }

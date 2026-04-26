@@ -2,43 +2,68 @@
 <html>
 <head>
     <title>Sales</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> <!-- 🔥 IMPORTANT -->
 </head>
+
 <body>
 
 <div class="layout">
 
-<aside class="sidebar">
-    <div class="logo">🚗 CarWay</div>
-    <nav>
-        <a href="admin-dashboard.html">Dashboard</a>
-        <a href="admin-cars.html">Cars</a>
-        <a href="admin-inventory.html">Inventory</a>
-        <a href="admin-sales-history.html">Sales History</a>
-        <a href="index.html" onclick="logout()">Logout</a>
-    </nav>
-</aside>
+    <aside class="sidebar">
+        <div class="logo">🚗 CarWay</div>
 
-<main class="main">
+        <nav>
+            <a href="admin-dashboard.html">Dashboard</a>
+            <a href="admin-cars.html">Cars</a>
+            <a href="admin-inventory.html">Inventory</a>
+            <a class="active" href="admin-sales.html">Sales</a>
+            <a href="admin-sales-history.html">Sales History</a>
+            <a href="index.html">Logout</a>
+        </nav>
+    </aside>
 
-    <div class="topbar">
-        <input placeholder="Search...">
-    </div>
+    <main class="main">
 
-    <div class="card">
-        <h2>Sell Car</h2>
-
-        <div class="form-grid">
-            <input id="carId" placeholder="Car ID">
-            <input id="customer" placeholder="Customer Name">
+        <div class="topbar">
+            <input placeholder="Search...">
         </div>
 
-        <button onclick="sellCar()">Sell</button>
-    </div>
+        <div class="card">
+            <h2>Direct Sale (Walk-in)</h2>
 
-</main>
+            <div class="form-grid">
+                <input id="carId" placeholder="Car ID">
+                <input id="customer" placeholder="Customer Name">
+            </div>
+
+            <button class="btn" onclick="sellCar()">Sell</button>
+        </div>
+
+        <div class="card">
+            <h2>Pending Orders</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Car</th>
+                        <th>Customer</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="salesTable"></tbody>
+            </table>
+        </div>
+
+    </main>
+
 </div>
 
 <script src="app.js"></script>
+<script>
+    loadSalesAdmin();
+</script>
+
 </body>
 </html>

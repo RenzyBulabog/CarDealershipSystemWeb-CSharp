@@ -36,19 +36,30 @@ namespace CarDealershipAPI.Controllers
         public IActionResult UpdateCar(int id, Car updatedCar)
         {
             var car = _context.Cars.Find(id);
+            if (car == null) return NotFound();
 
-            if (car == null)
-                return NotFound("Car not found");
+             // 🔥 SAFE UPDATE (ONLY IF PROVIDED)
+            if (!string.IsNullOrEmpty(updatedCar.Brand))
+                car.Brand = updatedCar.Brand;
 
-            car.Brand = updatedCar.Brand;
-            car.Model = updatedCar.Model;
-            car.Year = updatedCar.Year;
-            car.Price = updatedCar.Price;
-            car.Status = updatedCar.Status;
+            if (!string.IsNullOrEmpty(updatedCar.Model))
+                car.Model = updatedCar.Model;
 
-            _context.SaveChanges();
+            if (updatedCar.Year != 0)
+                car.Year = updatedCar.Year;
 
-            return Ok("Car updated");
+            if (updatedCar.Price != 0)
+                car.Price = updatedCar.Price;
+
+            if (!string.IsNullOrEmpty(updatedCar.Status))
+                car.Status = updatedCar.Status;
+
+             // 🔥 THIS IS YOUR TARGET
+                car.Stock = updatedCar.Stock;
+
+                _context.SaveChanges();
+
+            return Ok(car);
         }
 
         // DELETE
@@ -64,6 +75,17 @@ namespace CarDealershipAPI.Controllers
             _context.SaveChanges();
 
             return Ok("Car deleted");
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetCar(int id)
+        {
+            var car = _context.Cars.Find(id);
+
+            if (car == null)
+                return NotFound("Car not found");
+
+            return Ok(car);
         }
     }
 }

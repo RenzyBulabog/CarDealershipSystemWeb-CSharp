@@ -20,10 +20,31 @@
         <div class="login-right">
             <h2>Welcome Back</h2>
 
+            <!-- LOGIN -->
             <input id="username" placeholder="Username">
             <input type="password" id="password" placeholder="Password">
-
             <button onclick="login()">Login</button>
+
+            <p style="margin-top:8px; cursor:pointer; color:#38bdf8;" onclick="toggleRegister()">Create Account</p>
+            
+            <!-- REGISTER (HIDDEN) -->
+            <div id="registerSection" style="display:none; margin-top:15px;">
+
+                <input id="regFullname" placeholder="Full Name">
+                <input id="regEmail" placeholder="Email">
+
+                <input id="regUsername" placeholder="Username">
+                <input id="regPassword" type="password" placeholder="Password">
+
+                <select id="regRole">
+                    <option value="customer">Customer</option>
+                    <option value="admin">Admin</option>
+                </select>
+
+                <button onclick="register()">Register</button>
+
+            </div>
+
         </div>
 
     </div>

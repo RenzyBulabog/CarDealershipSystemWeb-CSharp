@@ -16,8 +16,9 @@
             <a href="admin-dashboard.html">Dashboard</a>
             <a href="admin-cars.html">Cars</a>
             <a href="admin-inventory.html">Inventory</a>
+            <a href="admin-sales.html">Sales</a>
             <a href="admin-sales-history.html">Sales History</a>
-            <a href="index.html" onclick="logout()">Logout</a>
+            <a href="index.html">Logout</a>
         </nav>
     </aside>
 
@@ -39,14 +40,19 @@
             <div class="card stat-card">🧾 Total Sales: <span id="totalSales">0</span></div>
         </div>
 
-        <div class="card">
-             <h3>Car Status Overview</h3>
-             <canvas id="statusChart"></canvas>
-       </div>
+        <!-- 🔥 CHARTS -->
+        <div class="charts">
 
-        <div class="card">
-            <h3>Sales Overview</h3>
-            <canvas id="salesChart"></canvas>
+            <div class="card chart-card">
+                <h3>Car Status Overview</h3>
+                <canvas id="statusChart"></canvas>
+            </div>
+
+            <div class="card chart-card">
+                <h3>Sales Overview</h3>
+                <canvas id="salesChart"></canvas>
+            </div>
+
         </div>
 
         <!-- CONTENT -->
@@ -59,14 +65,9 @@
 
 </div>
 
-<script src="app.js"></script>
-
-<script>
-    loadDashboardStats();
-</script>
-
+<!-- 🔥 LOAD ORDER IMPORTANT -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="app.js"></script>
 
 </body>
 </html>
-

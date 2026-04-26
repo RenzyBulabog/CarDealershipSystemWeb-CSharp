@@ -21,15 +21,23 @@
 
     <div class="card">
         <h2>Available Cars</h2>
+
+        <!-- 🔥 OPTIONAL: pwede mo i-keep or alisin -->
         <button onclick="loadCustomerCars()">Load Cars</button>
 
         <table>
             <thead>
                 <tr>
-                    <th>Brand</th><th>Model</th><th>Year</th>
-                    <th>Price</th><th>Status</th><th>Action</th>
+                    <th>Brand</th>
+                    <th>Model</th>
+                    <th>Year</th>
+                    <th>Price</th>
+                    <th>Status</th>
+                    <th>Action</th>
                 </tr>
             </thead>
+
+            <!-- 🔥 IMPORTANT: ito ginagamit ng JS -->
             <tbody id="customerTable"></tbody>
         </table>
     </div>
@@ -38,5 +46,11 @@
 </div>
 
 <script src="app.js"></script>
+
+<!-- 🔥 AUTO LOAD PARA DI MO NA PINIPINDOT -->
+<script>
+    loadCustomerCars();
+</script>
+
 </body>
 </html>

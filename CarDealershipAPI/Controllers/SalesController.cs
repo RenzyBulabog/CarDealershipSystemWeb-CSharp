@@ -29,23 +29,31 @@ namespace CarDealershipAPI.Controllers
         {
             try
             {
-                var car = _context.Cars.FirstOrDefault(c => c.Id == sale.CarId);
+                // 🔥 FORCE PENDING IF WALANG STATUS
+                if (string.IsNullOrEmpty(sale.Status))
+                {
+                    sale.Status = "Pending";
+                }
 
-                if (car == null)
-                    return NotFound("Car not found");
-
-                if (car.Stock <= 0)
-                    return BadRequest("Out of stock");
-
-                // 💣 DEDUCT STOCK
-                car.Stock--;
-
-                // 💣 AUTO SOLD
-                if (car.Stock == 0)
-                    car.Status = "Sold";
-
-                // 💣 ADD SALE DATE
+                // 🔥 SET DATE
                 sale.SaleDate = DateTime.Now;
+
+                // 🔥 ONLY DEDUCT IF APPROVED (ADMIN DIRECT SELL)
+                if (sale.Status == "Approved")
+                {
+                    var car = _context.Cars.FirstOrDefault(c => c.Id == sale.CarId);
+
+                    if (car == null)
+                        return NotFound("Car not found");
+
+                    if (car.Stock <= 0)
+                        return BadRequest("Out of stock");
+
+                    car.Stock--;
+
+                    if (car.Stock == 0)
+                        car.Status = "Sold";
+                }
 
                 _context.Sales.Add(sale);
                 _context.SaveChanges();
@@ -56,6 +64,37 @@ namespace CarDealershipAPI.Controllers
             {
                 return StatusCode(500, ex.Message);
             }
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateSale(int id, Sale updated)
+        {
+            var sale = _context.Sales.FirstOrDefault(s => s.Id == id);
+
+            if (sale == null)
+                return NotFound();
+
+            sale.Status = updated.Status;
+
+                // 🔥 IF APPROVED → DO STOCK HERE
+            if (updated.Status == "Approved")
+            {
+                var car = _context.Cars.FirstOrDefault(c => c.Id == sale.CarId);
+
+                if (car.Stock <= 0)
+                    return BadRequest("Out of stock");
+
+                car.Stock--;
+
+                if (car.Stock == 0)
+                    car.Status = "Sold";
+
+                sale.SaleDate = DateTime.Now;
+            }
+
+            _context.SaveChanges();
+
+            return Ok(sale);
         }
     }
 }

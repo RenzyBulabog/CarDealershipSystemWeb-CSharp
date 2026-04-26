@@ -45,5 +45,22 @@ namespace CarDealershipAPI.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
+
+        [HttpPost("register")]
+        public IActionResult Register([FromBody] User user)
+        {
+            // 🔥 check if username exists
+            if (_context.Users.Any(u => u.Username == user.Username))
+                return BadRequest("Username already exists");
+
+             // 🔥 FORCE ROLE (IMPORTANT)
+            if (user.Role != "admin")
+                user.Role = "customer";
+
+             _context.Users.Add(user);
+             _context.SaveChanges();
+
+            return Ok(user);
+        }
     }
 }

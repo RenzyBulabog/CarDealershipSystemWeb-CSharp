@@ -24,7 +24,7 @@
         <!-- TOPBAR -->
         <div class="topbar">
             <input placeholder="Search cars...">
-            <div class="user">Customer</div>
+            <div class="user" id="userDisplay"></div>
         </div>
 
         <!-- STATS -->
@@ -40,20 +40,24 @@
             </div>
         </div>
 
-        <!-- WELCOME CARD -->
+        <!-- WELCOME -->
         <div class="card">
             <h2>Welcome to CarWay</h2>
             <p>Browse cars and find your perfect ride.</p>
         </div>
 
     </main>
-
 </div>
 
 <script src="app.js"></script>
-
 <script>
-    loadDashboardStats();
+    loadDashboardStats(); // 🔥 stats
+
+    // 🔥 show logged-in user
+    const user = localStorage.getItem("username");
+    if (user) {
+        document.getElementById("userDisplay").innerText = "👤 " + user;
+    }
 </script>
 
 </body>

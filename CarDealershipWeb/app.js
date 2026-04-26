@@ -5,6 +5,9 @@ async function login() {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
+    const fullname = document.getElementById("regFullname").value;
+    const email = document.getElementById("regEmail").value;
+
     const res = await fetch(API + "auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -25,6 +28,48 @@ async function login() {
         window.location.href = "admin-dashboard.html";
     } else {
         window.location.href = "customer-dashboard.html";
+    }
+}
+
+async function register() {
+    console.log("REGISTER CLICKED");
+
+    const username = document.getElementById("regUsername").value;
+    const password = document.getElementById("regPassword").value;
+    const role = document.getElementById("regRole").value;
+
+    // 🔥 ADD THESE
+    const fullname = document.getElementById("regFullname").value;
+    const email = document.getElementById("regEmail").value;
+
+    try {
+        const res = await fetch(API + "auth/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                username: username,
+                password: password,
+                role: role,
+                fullname: fullname,
+                email: email
+            })
+        });
+
+        console.log("STATUS:", res.status);
+
+        if (res.ok) {
+            alert("Registered Successfully!");
+            toggleRegister(); // 🔥 auto hide form (optional)
+        } else {
+            const text = await res.text();
+            alert("Error: " + text);
+        }
+
+    } catch (err) {
+        console.error(err);
+        alert("API ERROR");
     }
 }
 
@@ -65,42 +110,64 @@ function fill(i, b, m, y, p, s, st) {
 }
 
 async function addCar() {
+    console.log("ADD CLICKED");
+
     const car = {
-        brand: brand.value,
-        model: model.value,
-        year: parseInt(year.value),
-        price: parseFloat(price.value),
-        status: status.value,
-        stock: parseInt(stock.value)
+        brand: document.getElementById("brand").value,
+        model: document.getElementById("model").value,
+        year: parseInt(document.getElementById("year").value),
+        price: parseFloat(document.getElementById("price").value),
+        status: document.getElementById("status").value,
+        stock: 0 // 🔥 FIX (since wala input)
     };
 
-    await fetch(API + "cars", {
+    console.log(car);
+
+    const res = await fetch(API + "cars", {
         method: "POST",
         headers: {"Content-Type":"application/json"},
         body: JSON.stringify(car)
     });
 
-    loadCars();
+    console.log("STATUS:", res.status);
+
+    if (res.ok) {
+        alert("Car Added");
+        loadCars();
+    } else {
+        alert("Add Failed");
+    }
 }
 
 async function updateCar() {
+    console.log("UPDATE CLICKED");
+
+    const idVal = document.getElementById("id").value;
+
     const car = {
-        id: parseInt(id.value),
-        brand: brand.value,
-        model: model.value,
-        year: parseInt(year.value),
-        price: parseFloat(price.value),
-        status: status.value,
-        stock: parseInt(stock.value)
+        id: parseInt(idVal),
+        brand: document.getElementById("brand").value,
+        model: document.getElementById("model").value,
+        year: parseInt(document.getElementById("year").value),
+        price: parseFloat(document.getElementById("price").value),
+        status: document.getElementById("status").value,
+        stock: 0 // 🔥 same fix
     };
 
-    await fetch(API + "cars/" + car.id, {
+    const res = await fetch(API + "cars/" + idVal, {
         method: "PUT",
         headers: {"Content-Type":"application/json"},
         body: JSON.stringify(car)
     });
 
-    loadCars();
+    console.log("STATUS:", res.status);
+
+    if (res.ok) {
+        alert("Updated");
+        loadCars();
+    } else {
+        alert("Update Failed");
+    }
 }
 
 async function deleteCar(id) {
@@ -111,6 +178,8 @@ async function deleteCar(id) {
 }
 
 /* ================= CUSTOMER ================= */
+
+// 🔥 LOAD CARS (fixed + disable if no stock)
 async function loadCustomerCars() {
     const res = await fetch(API + "cars");
     const data = await res.json();
@@ -118,16 +187,18 @@ async function loadCustomerCars() {
     let rows = "";
 
     data.forEach(c => {
+        const isAvailable = c.stock > 0;
+
         rows += `
         <tr>
             <td>${c.brand}</td>
             <td>${c.model}</td>
             <td>${c.year}</td>
-            <td>${c.price}</td>
-            <td>${c.status}</td>
+            <td>₱${c.price}</td>
+            <td>${isAvailable ? "Available" : "Sold Out"}</td>
             <td>
                 ${
-                    c.stock > 0
+                    isAvailable
                     ? `<button onclick="buyCar(${c.id})">Buy</button>`
                     : `<button disabled>Sold Out</button>`
                 }
@@ -135,38 +206,49 @@ async function loadCustomerCars() {
         </tr>`;
     });
 
-    customerTable.innerHTML = rows;
+    document.getElementById("customerTable").innerHTML = rows;
 }
 
+// 🔥 BUY → creates Pending sale
 async function buyCar(id) {
     const username = localStorage.getItem("username");
+
+    if (!username) {
+        alert("Please login first");
+        return;
+    }
 
     const res = await fetch(API + "sales", {
         method: "POST",
         headers: {"Content-Type":"application/json"},
         body: JSON.stringify({
             carId: id,
-            customerName: username
+            customerName: username,
+            status: "Pending"
         })
     });
 
     if (res.ok) {
-        alert("Purchased!");
+        alert("Request sent! Waiting for approval.");
         loadCustomerCars();
-        loadDashboardStats();
     } else {
-        alert("Out of stock");
+        const err = await res.text();
+        alert("Error: " + err);
     }
 }
 
 /* ================= DASHBOARD ================= */
 async function loadDashboardStats() {
-    const res = await fetch(API + "cars");
-    const data = await res.json();
+    const cars = await fetch(API + "cars").then(r => r.json());
+    const sales = await fetch(API + "sales").then(r => r.json());
 
-    if (totalCars) totalCars.innerText = data.length;
-    if (availableCars) availableCars.innerText = data.filter(c => c.status === "Available").length;
-    if (soldCars) soldCars.innerText = data.filter(c => c.status === "Sold").length;
+    const total = cars.length;
+    const sold = sales.length; // 🔥 REAL SOLD
+    const available = total - sold;
+
+    document.getElementById("totalCars").innerText = total;
+    document.getElementById("availableCars").innerText = available;
+    document.getElementById("soldCars").innerText = sold;
 }
 
 async function loadAdminStats() {
@@ -189,32 +271,44 @@ async function loadAdminStats() {
 
 /* ================= INVENTORY ================= */
 async function loadCharts() {
+
     const cars = await fetch(API + "cars").then(r => r.json());
     const sales = await fetch(API + "sales").then(r => r.json());
 
-    let available = cars.filter(c => c.status === "Available").length;
-    let sold = cars.filter(c => c.status === "Sold").length;
+    // 🔥 FIXED LOGIC
+    let sold = sales.length;
+    let available = cars.length - sold;
 
-    // 🔥 PIE CHART (Car Status)
+    // 🔥 PIE CHART
     new Chart(document.getElementById("statusChart"), {
         type: "pie",
         data: {
             labels: ["Available", "Sold"],
             datasets: [{
-                data: [available, sold]
+                data: [available, sold],
+                backgroundColor: ["#22c55e", "#ef4444"]
             }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false
         }
     });
 
-    // 🔥 BAR CHART (Sales Count)
+    // 🔥 BAR CHART
     new Chart(document.getElementById("salesChart"), {
         type: "bar",
         data: {
             labels: ["Total Sales"],
             datasets: [{
                 label: "Cars Sold",
-                data: [sales.length]
+                data: [sales.length],
+                backgroundColor: "#38bdf8"
             }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false
         }
     });
 }
@@ -296,40 +390,176 @@ async function loadInventory() {
     const res = await fetch(API + "cars");
     const data = await res.json();
 
-    let rows = "";
+    let grouped = {};
 
+    // 🔥 GROUP BY BRAND
     data.forEach(c => {
-        rows += `
-        <tr>
-            <td>${c.id}</td>
-            <td>${c.brand}</td>
-            <td>${c.model}</td>
-            <td>${c.stock}</td>
-            <td>
-                <button onclick="updateStock(${c.id})">Update</button>
-            </td>
-        </tr>`;
+        if (!grouped[c.brand]) {
+            grouped[c.brand] = [];
+        }
+        grouped[c.brand].push(c);
     });
 
-    inventoryTable.innerHTML = rows;
+    let html = "";
+
+    // 🔥 DISPLAY PER BRAND
+    for (let brand in grouped) {
+
+        html += `
+        <tr>
+            <td colspan="5" style="font-weight:bold; background:#1e293b; color:#38bdf8;">
+                ${brand}
+            </td>
+        </tr>
+        `;
+
+        grouped[brand].forEach(c => {
+            html += `
+            <tr>
+                <td>${c.id}</td>
+                <td>${c.brand}</td>
+                <td>${c.model}</td>
+
+                <!-- 🔥 EDITABLE STOCK -->
+                <td>
+                    <input type="number" id="stock-${c.id}" value="${c.stock ?? 0}" style="width:60px;">
+                </td>
+
+                <!-- 🔥 UPDATE BUTTON -->
+                <td>
+                    <button onclick="updateStock(${c.id})">Update</button>
+                </td>
+            </tr>
+            `;
+        });
+    }
+
+    document.getElementById("inventoryTable").innerHTML = html;
 }
 
-async function updateStock(id) {
-    const newStock = prompt("New stock:");
-    if (!newStock) return;
+async function loadSalesAdmin() {
+    const res = await fetch(API + "Sales");
+    const data = await res.json();
 
-    const res = await fetch(API + "cars/" + id);
+    console.log("ADMIN DATA:", data);
+
+    let rows = "";
+
+    data.forEach(s => {
+
+        if (s.Status && s.Status.toLowerCase() === "pending") {
+
+            rows += `
+            <tr>
+                <td>${s.Id}</td>
+                <td>${s.CarId}</td>
+                <td>${s.CustomerName}</td>
+                <td>${s.Status}</td>
+                <td>
+                    <button onclick="approveSale(${s.Id}, ${s.CarId})">
+                        Approve
+                    </button>
+                </td>
+            </tr>`;
+        }
+    });
+
+    document.getElementById("salesTable").innerHTML = rows;
+}
+
+async function approveSale(saleId, carId) {
+
+    // 🔥 UPDATE SALE STATUS ONLY (backend na bahala sa stock)
+    const res = await fetch(API + "Sales/" + saleId, {
+        method: "PUT",
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify({
+            Status: "Approved" // 🔥 IMPORTANT: capital S
+        })
+    });
+
+    if (res.ok) {
+        alert("Approved!");
+        loadSalesAdmin();
+    } else {
+        const err = await res.text();
+        alert("Error: " + err);
+    }
+}
+
+async function sellCar() {
+    const carId = parseInt(document.getElementById("carId").value);
+    const customer = document.getElementById("customer").value;
+
+    if (!carId || !customer) {
+        alert("Fill all fields");
+        return;
+    }
+
+    const res = await fetch(API + "cars/" + carId);
     const car = await res.json();
 
-    car.stock = parseInt(newStock);
+    if (car.stock <= 0) {
+        alert("No stock!");
+        return;
+    }
 
-    await fetch(API + "cars/" + id, {
+    car.stock -= 1;
+
+    await fetch(API + "cars/" + carId, {
         method: "PUT",
         headers: {"Content-Type":"application/json"},
         body: JSON.stringify(car)
     });
 
-    loadInventory();
+    await fetch(API + "sales", {
+        method: "POST",
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify({
+            carId: carId,
+            customerName: customer,
+            status: "Approved" // 🔥 DIRECT
+        })
+    });
+
+    alert("Sale completed!");
+}
+
+async function updateStock(id) {
+    const newStock = document.getElementById("stock-" + id).value;
+
+    if (newStock === "" || isNaN(newStock)) {
+        alert("Invalid stock");
+        return;
+    }
+
+    try {
+        // 🔥 GET FULL CAR (IMPORTANT)
+        const res = await fetch(API + "cars/" + id);
+        const car = await res.json();
+
+        // 🔥 UPDATE STOCK
+        car.stock = parseInt(newStock);
+
+        // 🔥 SEND FULL OBJECT
+        const updateRes = await fetch(API + "cars/" + id, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(car)
+        });
+
+        if (updateRes.ok) {
+            alert("Stock Updated!");
+            loadInventory();
+        } else {
+            const err = await updateRes.text();
+            alert("Update Failed: " + err);
+        }
+
+    } catch (err) {
+        console.error(err);
+        alert("API ERROR");
+    }
 }
 
 /* ================= SALES ================= */
@@ -337,19 +567,27 @@ async function loadSales() {
     const res = await fetch(API + "sales");
     const data = await res.json();
 
+    console.log("SALES DATA:", data); // 🔥 debug
+
     let rows = "";
 
     data.forEach(s => {
+
+        // 🔥 SAFE DATE (IMPORTANT)
+        const date = (s.saleDate && s.saleDate !== "0001-01-01T00:00:00")
+            ? new Date(s.saleDate).toLocaleString()
+            : "-";
+
         rows += `
         <tr>
             <td>${s.id}</td>
             <td>${s.carId}</td>
             <td>${s.customerName}</td>
-            <td>${new Date(s.saleDate).toLocaleString()}</td>
+            <td>${date}</td>
         </tr>`;
     });
 
-    salesTable.innerHTML = rows;
+    document.getElementById("salesTable").innerHTML = rows;
 }
 
 /* ================= PROTECT ================= */
@@ -361,6 +599,11 @@ if (location.href.includes("customer") && localStorage.getItem("role") !== "cust
     window.location.href = "index.html";
 }
 
+function toggleRegister() {
+    const form = document.getElementById("registerSection");
+    form.style.display = form.style.display === "none" ? "block" : "none";
+}
+
 /* ================= AUTO LOAD ================= */
 window.onload = () => {
     if (typeof loadDashboardStats === "function")
@@ -369,7 +612,16 @@ window.onload = () => {
     if (typeof loadAdminStats === "function")
         loadAdminStats();
 
-    // 🔥 LOAD CHARTS (IMPORTANT)
+    if (document.getElementById("salesTable")) {
+
+        // 🔥 FIX HERE
+        if (location.pathname.includes("admin-sales-history")) {
+            loadSales(); // HISTORY
+        } else {
+            loadSalesAdmin(); // ADMIN APPROVAL
+        }
+    }
+
     if (document.getElementById("statusChart")) {
         loadCharts();
     }
