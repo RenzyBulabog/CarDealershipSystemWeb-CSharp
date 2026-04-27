@@ -29,16 +29,16 @@ namespace CarDealershipAPI.Controllers
         {
             try
             {
-                // 🔥 FORCE PENDING IF WALANG STATUS
-                if (string.IsNullOrEmpty(sale.Status))
+                // 🔥 ALWAYS SET DATE
+                sale.SaleDate = DateTime.Now;
+
+                // 🔥 CUSTOMER REQUEST → ALWAYS PENDING
+                if (sale.Status != "Approved")
                 {
                     sale.Status = "Pending";
                 }
 
-                // 🔥 SET DATE
-                sale.SaleDate = DateTime.Now;
-
-                // 🔥 ONLY DEDUCT IF APPROVED (ADMIN DIRECT SELL)
+                // 🔥 ADMIN DIRECT SALE → APPROVED
                 if (sale.Status == "Approved")
                 {
                     var car = _context.Cars.FirstOrDefault(c => c.Id == sale.CarId);
@@ -72,14 +72,20 @@ namespace CarDealershipAPI.Controllers
             var sale = _context.Sales.FirstOrDefault(s => s.Id == id);
 
             if (sale == null)
-                return NotFound();
+                return NotFound("Sale not found");
+
+            // 🔥 PREVENT DOUBLE APPROVE
+            if (sale.Status == "Approved")
+                return BadRequest("Already approved");
 
             sale.Status = updated.Status;
 
-                // 🔥 IF APPROVED → DO STOCK HERE
             if (updated.Status == "Approved")
             {
                 var car = _context.Cars.FirstOrDefault(c => c.Id == sale.CarId);
+
+                if (car == null)
+                    return NotFound("Car not found");
 
                 if (car.Stock <= 0)
                     return BadRequest("Out of stock");

@@ -224,7 +224,7 @@ async function buyCar(id) {
         body: JSON.stringify({
             carId: id,
             customerName: username,
-            status: "Pending"
+            Status: "Pending"
         })
     });
 
@@ -242,80 +242,49 @@ async function loadDashboardStats() {
     const cars = await fetch(API + "cars").then(r => r.json());
     const sales = await fetch(API + "sales").then(r => r.json());
 
-    const total = cars.length;
-    const sold = sales.length; // 🔥 REAL SOLD
-    const available = total - sold;
+    // 🔥 APPROVED ONLY
+    const approved = sales.filter(s => s.status === "Approved");
 
-    document.getElementById("totalCars").innerText = total;
-    document.getElementById("availableCars").innerText = available;
-    document.getElementById("soldCars").innerText = sold;
-}
+    // 🚗 TOTAL CARS (unique cars)
+    const totalCarsCount = cars.length;
 
-async function loadAdminStats() {
-    const cars = await fetch(API + "cars").then(r => r.json());
-    const sales = await fetch(API + "sales").then(r => r.json());
+    // 📦 AVAILABLE = TOTAL STOCK
+    const totalStock = cars.reduce((sum, c) => sum + (c.stock || 0), 0);
 
+    // 💰 SOLD = approved only
+    const soldCount = approved.length;
+
+    // 🧾 TOTAL SALES = approved only
+    const totalSalesCount = approved.length;
+
+    // 💸 REVENUE = approved only
     let revenue = 0;
-
-    sales.forEach(s => {
+    approved.forEach(s => {
         const car = cars.find(c => c.id === s.carId);
         if (car) revenue += car.price;
     });
 
-    if (document.getElementById("totalRevenue"))
-        document.getElementById("totalRevenue").innerText = "₱" + revenue.toLocaleString();
+    // 🔥 APPLY VALUES
+    if (document.getElementById("totalCars"))
+        document.getElementById("totalCars").innerText = totalCarsCount;
+
+    if (document.getElementById("availableCars"))
+        document.getElementById("availableCars").innerText = totalStock;
+
+    if (document.getElementById("soldCars"))
+        document.getElementById("soldCars").innerText = soldCount;
 
     if (document.getElementById("totalSales"))
-        document.getElementById("totalSales").innerText = sales.length;
-}
+        document.getElementById("totalSales").innerText = totalSalesCount;
 
-/* ================= INVENTORY ================= */
-async function loadCharts() {
-
-    const cars = await fetch(API + "cars").then(r => r.json());
-    const sales = await fetch(API + "sales").then(r => r.json());
-
-    // 🔥 FIXED LOGIC
-    let sold = sales.length;
-    let available = cars.length - sold;
-
-    // 🔥 PIE CHART
-    new Chart(document.getElementById("statusChart"), {
-        type: "pie",
-        data: {
-            labels: ["Available", "Sold"],
-            datasets: [{
-                data: [available, sold],
-                backgroundColor: ["#22c55e", "#ef4444"]
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false
-        }
-    });
-
-    // 🔥 BAR CHART
-    new Chart(document.getElementById("salesChart"), {
-        type: "bar",
-        data: {
-            labels: ["Total Sales"],
-            datasets: [{
-                label: "Cars Sold",
-                data: [sales.length],
-                backgroundColor: "#38bdf8"
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false
-        }
-    });
+    if (document.getElementById("totalRevenue"))
+        document.getElementById("totalRevenue").innerText =
+            "₱" + revenue.toLocaleString();
 }
 
 /* ================= CHARTS ================= */
 
-// 🔥 GLOBAL VARIABLES (IMPORTANT)
+// 🔥 GLOBAL VARIABLES
 let statusChart, salesChart;
 
 async function loadCharts() {
@@ -327,16 +296,22 @@ async function loadCharts() {
     const cars = await fetch(API + "cars").then(r => r.json());
     const sales = await fetch(API + "sales").then(r => r.json());
 
-    let available = cars.filter(c => c.status === "Available").length;
-    let sold = cars.filter(c => c.status === "Sold").length;
+    // 🔥 ONLY APPROVED SALES
+    const approved = sales.filter(s => s.status === "Approved");
 
-    // 🔥 PIE CHART (Available vs Sold)
+    // 📦 TOTAL STOCK (AVAILABLE)
+    const totalStock = cars.reduce((sum, c) => sum + (c.stock || 0), 0);
+
+    // 💰 SOLD = approved only
+    const sold = approved.length;
+
+    // 🔥 PIE CHART (Stock vs Sold)
     statusChart = new Chart(document.getElementById("statusChart"), {
         type: "pie",
         data: {
-            labels: ["Available", "Sold"],
+            labels: ["Available Stock", "Sold"],
             datasets: [{
-                data: [available, sold],
+                data: [totalStock, sold],
                 backgroundColor: [
                     "#22c55e", // green
                     "#ef4444"  // red
@@ -344,6 +319,8 @@ async function loadCharts() {
             }]
         },
         options: {
+            responsive: true,
+            maintainAspectRatio: false,
             plugins: {
                 legend: {
                     labels: {
@@ -354,18 +331,20 @@ async function loadCharts() {
         }
     });
 
-    // 🔥 BAR CHART (Total Sales)
+    // 🔥 BAR CHART (APPROVED SALES ONLY)
     salesChart = new Chart(document.getElementById("salesChart"), {
         type: "bar",
         data: {
-            labels: ["Total Sales"],
+            labels: ["Approved Sales"],
             datasets: [{
                 label: "Cars Sold",
-                data: [sales.length],
+                data: [approved.length],
                 backgroundColor: "#38bdf8"
             }]
         },
         options: {
+            responsive: true,
+            maintainAspectRatio: false,
             scales: {
                 y: {
                     ticks: { color: "white" }
@@ -447,18 +426,17 @@ async function loadSalesAdmin() {
 
     data.forEach(s => {
 
-        if (s.Status && s.Status.toLowerCase() === "pending") {
+        if (s.status && s.status.toLowerCase() === "pending") {
 
             rows += `
             <tr>
-                <td>${s.Id}</td>
-                <td>${s.CarId}</td>
-                <td>${s.CustomerName}</td>
-                <td>${s.Status}</td>
+                <td>${s.id}</td>
+                <td>${s.carId}</td>
+                <td>${s.customerName}</td>
+                <td>${s.status}</td>
                 <td>
-                    <button onclick="approveSale(${s.Id}, ${s.CarId})">
-                        Approve
-                    </button>
+                    <button onclick="approveSale(${s.id})">Approve</button>
+                    <button onclick="declineSale(${s.id})">Decline</button>
                 </td>
             </tr>`;
         }
@@ -467,22 +445,64 @@ async function loadSalesAdmin() {
     document.getElementById("salesTable").innerHTML = rows;
 }
 
-async function approveSale(saleId, carId) {
+async function approveSale(saleId) {
 
-    // 🔥 UPDATE SALE STATUS ONLY (backend na bahala sa stock)
-    const res = await fetch(API + "Sales/" + saleId, {
+    const res = await fetch(API + "sales");
+    const sales = await res.json();
+
+    const sale = sales.find(s => s.id == saleId);
+
+    if (!sale) {
+        alert("Sale not found");
+        return;
+    }
+
+    sale.status = "Approved";
+
+    const update = await fetch(API + "sales/" + saleId, {
         method: "PUT",
         headers: {"Content-Type":"application/json"},
-        body: JSON.stringify({
-            Status: "Approved" // 🔥 IMPORTANT: capital S
-        })
+        body: JSON.stringify(sale)
     });
 
-    if (res.ok) {
+    if (update.ok) {
         alert("Approved!");
         loadSalesAdmin();
+        loadDashboardStats();
+        loadCharts();
     } else {
-        const err = await res.text();
+        const err = await update.text();
+        alert(err);
+    }
+}
+
+async function declineSale(saleId) {
+
+    const res = await fetch(API + "sales");
+    const sales = await res.json();
+
+    const sale = sales.find(s => (s.id ?? s.Id) == saleId);
+
+    if (!sale) {
+        alert("Sale not found");
+        return;
+    }
+
+    sale.status = "Declined";
+
+    const update = await fetch(API + "sales/" + saleId, {
+        method: "PUT",
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify(sale)
+    });
+
+    if (update.ok) {
+        alert("Declined!");
+        loadSalesAdmin();
+        loadDashboardStats(); // 🔥 update stats
+        loadCharts();
+    } else {
+        const err = await update.text();
         alert("Error: " + err);
     }
 }
@@ -567,13 +587,16 @@ async function loadSales() {
     const res = await fetch(API + "sales");
     const data = await res.json();
 
-    console.log("SALES DATA:", data); // 🔥 debug
+    console.log("SALES DATA:", data);
 
     let rows = "";
 
     data.forEach(s => {
 
-        // 🔥 SAFE DATE (IMPORTANT)
+        // 🔥 ONLY APPROVED SALES
+        if (s.status !== "Approved") return;
+
+        // 🔥 SAFE DATE
         const date = (s.saleDate && s.saleDate !== "0001-01-01T00:00:00")
             ? new Date(s.saleDate).toLocaleString()
             : "-";
