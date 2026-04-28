@@ -417,7 +417,7 @@ async function loadInventory() {
 }
 
 async function loadSalesAdmin() {
-    const res = await fetch(API + "Sales");
+    const res = await fetch(API + "sales");
     const data = await res.json();
 
     console.log("ADMIN DATA:", data);
@@ -516,33 +516,28 @@ async function sellCar() {
         return;
     }
 
-    const res = await fetch(API + "cars/" + carId);
-    const car = await res.json();
-
-    if (car.stock <= 0) {
-        alert("No stock!");
-        return;
-    }
-
-    car.stock -= 1;
-
-    await fetch(API + "cars/" + carId, {
-        method: "PUT",
-        headers: {"Content-Type":"application/json"},
-        body: JSON.stringify(car)
-    });
-
-    await fetch(API + "sales", {
+    // 🔥 DIRECTLY CREATE SALE (NO STOCK UPDATE HERE)
+    const res = await fetch(API + "sales", {
         method: "POST",
         headers: {"Content-Type":"application/json"},
         body: JSON.stringify({
             carId: carId,
             customerName: customer,
-            status: "Approved" // 🔥 DIRECT
+            status: "Approved"
         })
     });
 
-    alert("Sale completed!");
+    if (res.ok) {
+        alert("Sale completed!");
+
+        // 🔥 REFRESH EVERYTHING
+        loadSalesAdmin();
+        loadDashboardStats();
+        loadCharts();
+    } else {
+        const err = await res.text();
+        alert(err);
+    }
 }
 
 async function updateStock(id) {
