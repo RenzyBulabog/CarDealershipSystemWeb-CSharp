@@ -1,0 +1,478 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\cardealership\\forms\\admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|solutionrelative:cardealership\\forms\\admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\cardealership\\forms\\admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|solutionrelative:cardealership\\forms\\admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\cardealership\\forms\\admincars.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|solutionrelative:cardealership\\forms\\admincars.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\cardealership\\forms\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|solutionrelative:cardealership\\forms\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\cardealership\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|solutionrelative:cardealership\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|c:\\users\\rigil ann sacro\\cardealershipcsharp\\cardealership\\cardealership\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|solutionrelative:cardealership\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\cardealership\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|solutionrelative:cardealership\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\cardealership\\utils\\session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|solutionrelative:cardealership\\utils\\session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\cardealership\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|solutionrelative:cardealership\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\cardealership\\forms\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|solutionrelative:cardealership\\forms\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|c:\\users\\rigil ann sacro\\cardealershipcsharp\\cardealership\\cardealership\\forms\\customerdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|solutionrelative:cardealership\\forms\\customerdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|c:\\users\\rigil ann sacro\\cardealershipcsharp\\cardealership\\cardealership\\forms\\customerdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|solutionrelative:cardealership\\forms\\customerdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|c:\\users\\rigil ann sacro\\cardealershipcsharp\\cardealership\\cardealership\\forms\\customerdashboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|solutionrelative:cardealership\\forms\\customerdashboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|c:\\users\\rigil ann sacro\\cardealershipcsharp\\cardealership\\cardealership\\forms\\adminsaleshistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|solutionrelative:cardealership\\forms\\adminsaleshistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|c:\\users\\rigil ann sacro\\cardealershipcsharp\\cardealership\\cardealership\\forms\\adminsaleshistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|solutionrelative:cardealership\\forms\\adminsaleshistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|c:\\users\\rigil ann sacro\\cardealershipcsharp\\cardealership\\cardealership\\forms\\adminsales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|solutionrelative:cardealership\\forms\\adminsales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|c:\\users\\rigil ann sacro\\cardealershipcsharp\\cardealership\\cardealership\\forms\\adminsales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|solutionrelative:cardealership\\forms\\adminsales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\cardealership\\forms\\admininventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|solutionrelative:cardealership\\forms\\admininventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|c:\\users\\rigil ann sacro\\cardealershipcsharp\\cardealership\\cardealership\\forms\\admininventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|solutionrelative:cardealership\\forms\\admininventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\cardealership\\forms\\admincars.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|solutionrelative:cardealership\\forms\\admincars.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\cardealership\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|solutionrelative:cardealership\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|c:\\users\\rigil ann sacro\\cardealershipcsharp\\cardealership\\cardealership\\forms\\loginform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|solutionrelative:cardealership\\forms\\loginform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\cardealership\\models\\sale.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|solutionrelative:cardealership\\models\\sale.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\cardealership\\models\\car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17E64434-6BCB-4EC2-932A-BB68B8870D7E}|CarDealership\\CarDealership.csproj|solutionrelative:cardealership\\models\\car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LoginForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Forms\\LoginForm.cs",
+              "RelativeDocumentMoniker": "CarDealership\\Forms\\LoginForm.cs",
+              "ToolTip": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Forms\\LoginForm.cs [Design]",
+              "RelativeToolTip": "CarDealership\\Forms\\LoginForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T06:01:16.13Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "LoginForm.cs",
+              "DocumentMoniker": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Forms\\LoginForm.cs",
+              "RelativeDocumentMoniker": "CarDealership\\Forms\\LoginForm.cs",
+              "ToolTip": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Forms\\LoginForm.cs",
+              "RelativeToolTip": "CarDealership\\Forms\\LoginForm.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAswCUAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T10:54:05.631Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RegisterForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Forms\\RegisterForm.cs",
+              "RelativeDocumentMoniker": "CarDealership\\Forms\\RegisterForm.cs",
+              "ToolTip": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Forms\\RegisterForm.cs [Design]",
+              "RelativeToolTip": "CarDealership\\Forms\\RegisterForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T13:30:18.371Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "RegisterForm.cs",
+              "DocumentMoniker": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Forms\\RegisterForm.cs",
+              "RelativeDocumentMoniker": "CarDealership\\Forms\\RegisterForm.cs",
+              "ToolTip": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Forms\\RegisterForm.cs",
+              "RelativeToolTip": "CarDealership\\Forms\\RegisterForm.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAswE8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T13:50:10.155Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdminDashboard.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Forms\\AdminDashboard.cs",
+              "RelativeDocumentMoniker": "CarDealership\\Forms\\AdminDashboard.cs",
+              "ToolTip": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Forms\\AdminDashboard.cs [Design]",
+              "RelativeToolTip": "CarDealership\\Forms\\AdminDashboard.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T09:03:13.922Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AdminDashboard.cs",
+              "DocumentMoniker": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Forms\\AdminDashboard.cs",
+              "RelativeDocumentMoniker": "CarDealership\\Forms\\AdminDashboard.cs",
+              "ToolTip": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Forms\\AdminDashboard.cs",
+              "RelativeToolTip": "CarDealership\\Forms\\AdminDashboard.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAH4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T10:57:26.64Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AdminCars.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Forms\\AdminCars.cs",
+              "RelativeDocumentMoniker": "CarDealership\\Forms\\AdminCars.cs",
+              "ToolTip": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Forms\\AdminCars.cs [Design]",
+              "RelativeToolTip": "CarDealership\\Forms\\AdminCars.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T10:35:07.411Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "AdminCars.cs",
+              "DocumentMoniker": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Forms\\AdminCars.cs",
+              "RelativeDocumentMoniker": "CarDealership\\Forms\\AdminCars.cs",
+              "ToolTip": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Forms\\AdminCars.cs",
+              "RelativeToolTip": "CarDealership\\Forms\\AdminCars.cs",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAkwIkAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T11:30:32.085Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "AdminInventory.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Forms\\AdminInventory.cs",
+              "RelativeDocumentMoniker": "CarDealership\\Forms\\AdminInventory.cs",
+              "ToolTip": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Forms\\AdminInventory.cs [Design]",
+              "RelativeToolTip": "CarDealership\\Forms\\AdminInventory.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T14:03:26.385Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AdminInventory.cs",
+              "DocumentMoniker": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Forms\\AdminInventory.cs",
+              "RelativeDocumentMoniker": "CarDealership\\Forms\\AdminInventory.cs",
+              "ToolTip": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Forms\\AdminInventory.cs",
+              "RelativeToolTip": "CarDealership\\Forms\\AdminInventory.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAA5wHcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T14:15:59.874Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AdminSales.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Forms\\AdminSales.cs",
+              "RelativeDocumentMoniker": "CarDealership\\Forms\\AdminSales.cs",
+              "ToolTip": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Forms\\AdminSales.cs [Design]",
+              "RelativeToolTip": "CarDealership\\Forms\\AdminSales.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-05T13:05:31.513Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AdminSales.cs",
+              "DocumentMoniker": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Forms\\AdminSales.cs",
+              "RelativeDocumentMoniker": "CarDealership\\Forms\\AdminSales.cs",
+              "ToolTip": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Forms\\AdminSales.cs",
+              "RelativeToolTip": "CarDealership\\Forms\\AdminSales.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAgwE4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-05T13:25:47.54Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AdminSalesHistory.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Forms\\AdminSalesHistory.cs",
+              "RelativeDocumentMoniker": "CarDealership\\Forms\\AdminSalesHistory.cs",
+              "ToolTip": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Forms\\AdminSalesHistory.cs [Design]",
+              "RelativeToolTip": "CarDealership\\Forms\\AdminSalesHistory.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-05T13:36:31.251Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AdminSalesHistory.cs",
+              "DocumentMoniker": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Forms\\AdminSalesHistory.cs",
+              "RelativeDocumentMoniker": "CarDealership\\Forms\\AdminSalesHistory.cs",
+              "ToolTip": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Forms\\AdminSalesHistory.cs",
+              "RelativeToolTip": "CarDealership\\Forms\\AdminSalesHistory.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAswF8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-05T13:48:52.059Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CustomerDashboard.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Forms\\CustomerDashboard.cs",
+              "RelativeDocumentMoniker": "CarDealership\\Forms\\CustomerDashboard.cs",
+              "ToolTip": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Forms\\CustomerDashboard.cs [Design]",
+              "RelativeToolTip": "CarDealership\\Forms\\CustomerDashboard.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-05T13:55:58.926Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CustomerDashboard.cs",
+              "DocumentMoniker": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Forms\\CustomerDashboard.cs",
+              "RelativeDocumentMoniker": "CarDealership\\Forms\\CustomerDashboard.cs",
+              "ToolTip": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Forms\\CustomerDashboard.cs",
+              "RelativeToolTip": "CarDealership\\Forms\\CustomerDashboard.cs",
+              "ViewState": "AgIAAHcAAAAAAAAAAAAswJcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-05T14:11:15.031Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{c9c0ae26-aa77-11d2-b3f0-0000f87570ee}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CustomerDashboard.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Forms\\CustomerDashboard.Designer.cs",
+              "RelativeDocumentMoniker": "CarDealership\\Forms\\CustomerDashboard.Designer.cs",
+              "ToolTip": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Forms\\CustomerDashboard.Designer.cs",
+              "RelativeToolTip": "CarDealership\\Forms\\CustomerDashboard.Designer.cs",
+              "ViewState": "AgIAAKAAAAAAAAAAAAAewLAAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-05T16:24:01.107Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "LoginForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Forms\\LoginForm.Designer.cs",
+              "RelativeDocumentMoniker": "CarDealership\\Forms\\LoginForm.Designer.cs",
+              "ToolTip": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Forms\\LoginForm.Designer.cs",
+              "RelativeToolTip": "CarDealership\\Forms\\LoginForm.Designer.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAewHcAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-05T14:35:59.827Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Program.cs",
+              "RelativeDocumentMoniker": "CarDealership\\Program.cs",
+              "ToolTip": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Program.cs",
+              "RelativeToolTip": "CarDealership\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-05T14:31:09.392Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Session.cs",
+              "DocumentMoniker": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Utils\\Session.cs",
+              "RelativeDocumentMoniker": "CarDealership\\Utils\\Session.cs",
+              "ToolTip": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Utils\\Session.cs",
+              "RelativeToolTip": "CarDealership\\Utils\\Session.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T05:53:20.816Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ApiService.cs",
+              "DocumentMoniker": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Services\\ApiService.cs",
+              "RelativeDocumentMoniker": "CarDealership\\Services\\ApiService.cs",
+              "ToolTip": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Services\\ApiService.cs",
+              "RelativeToolTip": "CarDealership\\Services\\ApiService.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAmwEMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T05:50:58.409Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Models\\User.cs",
+              "RelativeDocumentMoniker": "CarDealership\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Models\\User.cs",
+              "RelativeToolTip": "CarDealership\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T05:50:16.989Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Sale.cs",
+              "DocumentMoniker": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Models\\Sale.cs",
+              "RelativeDocumentMoniker": "CarDealership\\Models\\Sale.cs",
+              "ToolTip": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Models\\Sale.cs",
+              "RelativeToolTip": "CarDealership\\Models\\Sale.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T05:49:49.227Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Car.cs",
+              "DocumentMoniker": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Models\\Car.cs",
+              "RelativeDocumentMoniker": "CarDealership\\Models\\Car.cs",
+              "ToolTip": "C:\\Users\\RIGIL ANN SACRO\\CarDealershipCsharp\\CarDealership\\CarDealership\\Models\\Car.cs",
+              "RelativeToolTip": "CarDealership\\Models\\Car.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T05:49:05.762Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
